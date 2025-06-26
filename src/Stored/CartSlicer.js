@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import { Decrement, Increment } from "../../../Day14/src/Slicer1"
+// import { Decrement, Increment } from "../../../Day14/src/Slicer1"
 
 const cart=createSlice({
     name:'cartslicer',
