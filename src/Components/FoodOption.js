@@ -1,4 +1,4 @@
-import { imageGridCards } from "../Utils/foodData"
+import { imageGridCards } from "../Utils/FoodData"
 import FoodCard from "./FoodCard"
 
 
