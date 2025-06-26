@@ -11,11 +11,14 @@ export default function RestaurantMenu(){
 
     useEffect(()=>{
         async function fetchData(){
-            const proxyServer="https://thingproxy.freeboard.io/fetch/"; 
+            // const proxyServer="https://thingproxy.freeboard.io/fetch/"; 
             const swiggyAPI=`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${id}`
             //               https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=10208
             //               https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=16866
-            const response=await fetch(proxyServer+swiggyAPI);
+            // const response=await fetch(proxyServer+swiggyAPI);
+            const response = await fetch(
+                "https://corsproxy.io/?" + encodeURIComponent(swiggyAPI)
+            );
             const data=await response.json();
             const tempData=data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
             const filterData=tempData?.filter((data)=>'title' in data?.card?.card);
