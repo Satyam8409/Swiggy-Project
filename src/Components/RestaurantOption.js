@@ -4,6 +4,7 @@ import Shimmer from "./Simmer";
 
 export default function Restaurant(){
     const [RestData,setRestData]=useState([]);
+    /*
     useEffect(()=>{
         async function fetchData(){
             // const proxyServer="https://thingproxy.freeboard.io/fetch/"; //CORS
@@ -19,6 +20,19 @@ export default function Restaurant(){
         }
         fetchData()
     },[])
+    */
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch("https://swiggy-backend-rosy.vercel.app/api/restaurants?lat=28.7040592&lng=77.10249019999999");
+            // const response = await fetch(`http://localhost:5000/api/restaurants?lat=28.7040592&lng=77.10249019999999`);
+            const data = await response.json();
+            setRestData(
+              data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            );
+        }
+        fetchData();
+    }, []);
+
 
     //shimmer effect
     if(RestData?.length==0){

@@ -8,7 +8,7 @@ export default function RestaurantMenu(){
     const [restData,setRestData]=useState([]);
     let {id}=useParams();//obj return krta hai isliye destructure kr liye
     let [selected,setSelected]=useState(null);
-
+/*
     useEffect(()=>{
         async function fetchData(){
             // const proxyServer="https://thingproxy.freeboard.io/fetch/";
@@ -27,6 +27,22 @@ export default function RestaurantMenu(){
         }
         fetchData()
     },[id])
+*/
+
+useEffect(() => {
+  async function fetchData() {
+    const response = await fetch(`https://swiggy-backend-rosy.vercel.app/api/menu?lat=28.7040592&lng=77.10249019999999&restaurantId=${id}`);
+    // const response = await fetch(`http://localhost:5000/api/menu?lat=28.7040592&lng=77.10249019999999&restaurantId=${id}`);
+    const data = await response.json();
+    const tempData =data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    const filterData = tempData?.filter(
+      (data) => "title" in data?.card?.card
+    );
+    setRestData(filterData);
+  }
+  fetchData();
+}, [id]);
+
 
 /*wrong logic bcz useEffect can't return JSX
     useEffect(()=>{
