@@ -3,7 +3,6 @@ import RestaurantItemCard from "./RestaurantItemCard"
 import RestMenuCardCategories from "./RestMenuCardCategories";
 
 export default function RestaurantMenuCard({itemAll, foodType}){
-
     const [isOpen,setIsOpen]=useState(true)
     if(!isOpen){
         return(
@@ -17,7 +16,6 @@ export default function RestaurantMenuCard({itemAll, foodType}){
         )
     }
     if (!itemAll) return null;
-
 
     if(foodType=='veg'){
         if("categories" in itemAll){

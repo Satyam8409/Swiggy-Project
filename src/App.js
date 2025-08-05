@@ -14,7 +14,8 @@ function App(){
     
     return(
        <>
-       {/* <Header></Header>
+       {/*created separate file for them as there were part of home page 
+       <Header></Header>
        <FoodOption></FoodOption>
        <GroceryOption></GroceryOption>
        <DineOption></DineOption> */}

@@ -5,14 +5,11 @@ import DineOption from "./DineOption"
 import GetApp from "./GetApp"
 import React,{ useRef } from "react"; 
 
-
 export default function Home(){
     const sectionRef = useRef(null);
-
     const scrollToSection = () => {
         sectionRef.current.scrollIntoView({ behavior: 'smooth' });
     };
-
     return(
         <>
             <Header props={scrollToSection}></Header>
@@ -23,7 +20,6 @@ export default function Home(){
         </>
     )
 }
-
 
 /*useRef -how it works & its flow
     1. useRef Created in Home.js
@@ -47,9 +43,4 @@ export default function Home(){
     4. Button in <Header /> calls that function:
         -<button onClick={onScrollClick}>Get the App</button>
         -ls the browser to the <div> in GetApp.
-
-
-
-
-
 */

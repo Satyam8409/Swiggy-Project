@@ -1,6 +1,5 @@
 import { dineoutRestaurants } from "../Utils/DineData";
 import DineCard from "./DineCard";
-// import React from "react";
 
 export default function DineOption(){
     return(

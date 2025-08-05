@@ -4,23 +4,6 @@ import Shimmer from "./Simmer";
 
 export default function Restaurant(){
     const [RestData,setRestData]=useState([]);
-    /*
-    useEffect(()=>{
-        async function fetchData(){
-            // const proxyServer="https://thingproxy.freeboard.io/fetch/"; //CORS
-            const proxyServer = "https://cors-anywhere.herokuapp.com/";
-            const swiggyAPI="https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true"
-            const response=await fetch(proxyServer+swiggyAPI);
-            
-            // const response = await fetch(
-            //     "https://api.allorigins.win/raw?url=" + encodeURIComponent(swiggyAPI)
-            // );
-            const data=await response.json();
-            setRestData(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        }
-        fetchData()
-    },[])
-    */
     useEffect(() => {
         async function fetchData() {
             const response = await fetch("https://swiggy-backend-rosy.vercel.app/api/restaurants?lat=28.7040592&lng=77.10249019999999");
@@ -60,32 +43,3 @@ export default function Restaurant(){
         </>
     )
 }
-
-
-
-
-
-
-
-
-
-
-/*
-https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&
-restaurantId=${id}
-https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.29040&lng=70.79150&
-restaurantId=223427&catalog_qa=undefined&submitAction=ENTER
-*/
-
-/*CORS(Cross-Origin Resource Sharing) error
-    -access to fetch at 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true'from origin 'http://localhost:1234' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-    -This happens when your frontend (running at http://localhost:1234) tries to make a request to a backend 
-    (like https://www.swiggy.com) that doesn't allow cross-origin requests from your domain.
-
- Why This Happens:
-    -Swiggy’s API doesn't include the Access-Control-Allow-Origin header in its response, so browsers block your request for security reasons.
-
- Solved by using 
-    -another server which get data for u and include allow in header this server do all this
-    -Proxy server "https://cors-anywhere.herokuapp.com/"; 
-    */

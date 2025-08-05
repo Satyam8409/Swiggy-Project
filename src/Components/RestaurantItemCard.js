@@ -23,8 +23,6 @@ export default function RestaurantItemCard({data}){
     }
 
 
-
-
     //CART functionality
     // const [count,setCount]= useState(0); //isse trika se ek prbm hia ye apna val loose kr deta hai jaise dusre route pe jate hai //to iske pace pe useSelector se value read kryege
         
@@ -79,8 +77,3 @@ export default function RestaurantItemCard({data}){
         </>
     )
 }
-
-/*
-  https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/4/19/d4387d28-73ab-45b7-b424-61588863d158_9477217d-7c7a-4834-919a-b9ae7d7cf950.jpg
-//                                                                                            FOOD_CATALOG/IMAGES/CMS/2025/4/17/ef2f1053-c8e3-4072-aaa7-4539a67c8554_e8da5065-4d03-47d7-bad7-5413398a1564.jpg_compressed
-*/       

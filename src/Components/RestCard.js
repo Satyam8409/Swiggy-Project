@@ -26,6 +26,3 @@ export default function RestCard({data}){
     )
 }
 
-
-
-// https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/5/22/aa8de7a1-39b2-432b-8b09-49dada8a32f5_16866.JPG
